@@ -18,7 +18,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
   padding: 8px;
   width: 100%;
   max-width: 700px;

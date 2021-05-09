@@ -8,7 +8,12 @@ export const showAlertContainer = (callback) => {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
       setShowAlert(true)
+
       setTimeout(() => {
         setShowAlert(false)
       }, 3000);
