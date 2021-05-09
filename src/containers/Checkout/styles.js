@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoints, colors } from '../../styles/globals';
+import { breakpoints, colors } from '@demo-shop/styles/globals';
 
 export const Container = styled.div`
   max-width: 1024px;

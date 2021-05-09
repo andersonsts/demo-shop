@@ -3,16 +3,16 @@ import { FaChevronLeft } from 'react-icons/fa'
 import Cards from 'react-credit-cards';
 import { useFormik } from 'formik';
 
-import Input from '../../components/Input';
-import Step from '../../components/Step'
-import Button from '../../components/Button'
-import MaskedInput from '../../components/Input/MaskedInput';
-import Select from '../../components/Select';
-import Wrapper from '../../components/Wrapper';
-import Alert from '../../components/Alert'
+import Input from '@demo-shop/components/Input'
+import Step from '@demo-shop/components/Step'
+import Button from '@demo-shop/components/Button'
+import MaskedInput from '@demo-shop/components/Input/MaskedInput';
+import Select from '@demo-shop/components/Select';
+import Wrapper from '@demo-shop/components/Wrapper';
+import Alert from '@demo-shop/components/Alert'
 
-import { showAlertContainer } from '../../utils/showAlertContainer'
-import { PLOT_OPTIONS } from '../../utils/options'
+import { showAlertContainer } from '@demo-shop/utils/showAlertContainer'
+import { PLOT_OPTIONS } from '@demo-shop/utils/options'
 
 import { formikContent } from './formikContent'
 

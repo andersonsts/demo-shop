@@ -1,6 +1,6 @@
 import Loader from "react-loader-spinner";
 
-import { colors } from '../../styles/globals';
+import { colors } from '@demo-shop/styles/globals';
 import { ContainerButton } from './styles'
 
 const Button = ({ children, loading = false, disabled = false, ...rest }) => {

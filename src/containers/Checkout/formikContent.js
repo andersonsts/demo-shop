@@ -1,3 +1,4 @@
+// import { payment } from '@demo-shop/services/resource/payment/payment.service'
 import valid from 'card-validator'
 import * as yup from 'yup'
 
@@ -43,5 +44,7 @@ export const formikContent = {
     plots: yup.string()
         .required('Insira o número de parcelas')
   }),
-  onSubmit: () => {}
+  onSubmit: async (values) => {
+    // TODO - Call 'payment' method in '@demo-shop/services/resource/payment/payment.service and format data to send
+  }
 }
