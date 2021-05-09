@@ -3,7 +3,7 @@ import { HeaderContainer } from './styles'
 const Header = () => {
   return (
     <HeaderContainer>
-      <div>
+      <div data-testid='image-container'>
         <img src="/images/logo.svg" alt="Demo Shop Logo"/>
       </div>
 
