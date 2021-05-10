@@ -40,7 +40,7 @@ const Checkout = () => {
 
   const formik = useFormik(formikContent)
   const { loading, start, showAlert } = showAlertContainer(formik.resetForm)
-  const { errors, values, handleChange } = formik
+  const { errors, touched, values, handleChange, handleBlur } = formik
   const { cvc, expiry, name, number, focus, plots } = values
 
   const handleInputFocus = (event) => {
@@ -113,8 +113,9 @@ const Checkout = () => {
                 label='Número do cartão'
                 mask='9999 9999 9999 9999'
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}  
-                error={errors?.number}
+                error={(errors.number && touched.number) ? errors.number : null}
               />
             </Wrapper>
             <Wrapper>
@@ -123,8 +124,9 @@ const Checkout = () => {
                 name='name' 
                 label='Nome (igual ao cartão)' 
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}
-                error={errors?.name}
+                error={(errors?.name && touched?.name) ? errors?.name : null}
               />
             </Wrapper>
             <Wrapper cell={2}>
@@ -134,19 +136,20 @@ const Checkout = () => {
                 label='Validade'
                 mask='99/99' 
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}  
-                error={errors?.expiry}
+                error={(errors?.expiry && touched?.expiry) ? errors?.expiry : null}
               />
               <MaskedInput 
                 value={cvc}
                 name='cvc' 
                 label='CVV'
                 infoMessage='Código de segurança'
-                mask='999' 
-                hasInfo
+                mask='999'
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}
-                error={errors?.cvc}
+                error={(errors?.cvc && touched?.cvc) ? errors?.cvc : null}
               />
             </Wrapper>
             <Wrapper>
@@ -156,8 +159,9 @@ const Checkout = () => {
                 label='Número de parcelas'
                 options={PLOT_OPTIONS}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}
-                error={errors?.plots}
+                error={(errors?.plots && touched?.plots) ? errors?.plots : null}
               />
             </Wrapper>
             <FooterForm>

@@ -6,7 +6,7 @@ const Input = ({ name, value, label, error, ...rest }) => {
   const isFilled = value !== '' 
 
   return (
-    <Container isFilled={isFilled}>
+    <Container isFilled={isFilled} error={error}>
       <input 
         type="text" 
         name={name} 

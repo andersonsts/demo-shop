@@ -12,7 +12,6 @@ const MaskedInput = ({
   mask = '99/99', 
   error, 
   infoMessage = '',
-  hasInfo = false,
   ...rest 
 }) => {
   const isFilled = value !== '' 

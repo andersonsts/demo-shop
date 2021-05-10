@@ -3,8 +3,6 @@ import valid from 'card-validator'
 import * as yup from 'yup'
 
 export const formikContent = {
-  validateOnChange: true,
-  validateOnBlur: false,
   initialValues: {
     cvc: '',
     expiry: '',
