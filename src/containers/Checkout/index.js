@@ -3,10 +3,9 @@ import { FaChevronLeft } from 'react-icons/fa'
 import Cards from 'react-credit-cards';
 import { useFormik } from 'formik';
 
-import Input from '@demo-shop/components/Input'
+import { MaskedInput, TextField as Input } from '@demo-shop/components/Input'
 import Step from '@demo-shop/components/Step'
 import Button from '@demo-shop/components/Button'
-import MaskedInput from '@demo-shop/components/Input/MaskedInput';
 import Select from '@demo-shop/components/Select';
 import Wrapper from '@demo-shop/components/Wrapper';
 import Alert from '@demo-shop/components/Alert'
