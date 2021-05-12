@@ -27,6 +27,7 @@ import {
   FooterForm,
   StepsForMobile
 } from './styles'
+import { api } from '@demo-shop/services/api';
 
 const Checkout = () => {
   const STEPS_DATA = [
