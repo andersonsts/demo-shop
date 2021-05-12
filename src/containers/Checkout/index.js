@@ -117,6 +117,7 @@ const Checkout = () => {
                 onFocus={handleInputFocus}  
                 error={(errors.number && touched.number) ? errors.number : null}
                 disabled={loading}
+                data-testid='number'
               />
             </Wrapper>
             <Wrapper>
@@ -129,6 +130,7 @@ const Checkout = () => {
                 onFocus={handleInputFocus}
                 error={(errors?.name && touched?.name) ? errors?.name : null}
                 disabled={loading}
+                data-testid='name'
               />
             </Wrapper>
             <Wrapper cell={2}>
@@ -142,6 +144,7 @@ const Checkout = () => {
                 onFocus={handleInputFocus}  
                 error={(errors?.expiry && touched?.expiry) ? errors?.expiry : null}
                 disabled={loading}
+                data-testid='expiry'
               />
               <MaskedInput 
                 value={cvc}
@@ -154,6 +157,7 @@ const Checkout = () => {
                 onFocus={handleInputFocus}
                 error={(errors?.cvc && touched?.cvc) ? errors?.cvc : null}
                 disabled={loading}
+                data-testid='cvc'
               />
             </Wrapper>
             <Wrapper>
@@ -167,6 +171,7 @@ const Checkout = () => {
                 onFocus={handleInputFocus}
                 error={(errors?.plots && touched?.plots) ? errors?.plots : null}
                 disabled={loading}
+                data-testid='plots'
               />
             </Wrapper>
             <FooterForm>
