@@ -2,7 +2,7 @@ import { HeaderContainer } from './styles'
 
 const Header = () => {
   return (
-    <HeaderContainer>
+    <HeaderContainer data-testid='header'>
       <div data-testid='image-container'>
         <img src="/images/logo.svg" alt="Demo Shop Logo"/>
       </div>

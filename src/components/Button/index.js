@@ -1,21 +1,15 @@
-import Loader from "react-loader-spinner";
 
-import { colors } from '@demo-shop/styles/globals';
+import Loading from './loader';
+
 import { ContainerButton } from './styles'
 
 const Button = ({ children, loading = false, disabled = false, ...rest }) => {
   return (
-    <ContainerButton type='button' disabled={disabled || loading} { ...rest }>
-      {loading ? (
-        <Loader
-          type="TailSpin"
-          color={colors.white}
-          height={28}
-          width={28}
-        />
-      ) : (
-        children
-      )}
+    <ContainerButton data-testid='button-container' type='button' disabled={disabled || loading} { ...rest }>
+      {loading 
+        ? <Loading />
+        : children
+      }
     </ContainerButton>
   )
 }
