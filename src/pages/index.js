@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
-import Checkout from '../containers/Checkout'
-import Header from '../components/Header'
+import Checkout from '@demo-shop/containers/Checkout'
+import Header from '@demo-shop/components/Header'
 
-import { MainContainer } from '../styles/Home'
+import { MainContainer } from '@demo-shop/styles/pages/Home'
 
 export default function Home() {
   return (

@@ -3,10 +3,9 @@ import { FaChevronLeft } from 'react-icons/fa'
 import Cards from 'react-credit-cards';
 import { useFormik } from 'formik';
 
-import Input from '@demo-shop/components/Input'
+import { MaskedInput, TextField as Input } from '@demo-shop/components/Input'
 import Step from '@demo-shop/components/Step'
 import Button from '@demo-shop/components/Button'
-import MaskedInput from '@demo-shop/components/Input/MaskedInput';
 import Select from '@demo-shop/components/Select';
 import Wrapper from '@demo-shop/components/Wrapper';
 import Alert from '@demo-shop/components/Alert'
@@ -24,6 +23,7 @@ import {
   Title,
   StepsNav,
   Form,
+  ExtraSection,
   FooterForm,
   StepsForMobile
 } from './styles'
@@ -39,15 +39,15 @@ const Checkout = () => {
   const [checkedStep, setCheckedStep] = React.useState(INITIAL_STEP)
 
   const formik = useFormik(formikContent)
-  const { loading, start, showAlert } = showAlertContainer(formik.resetForm)
-  const { errors, values, handleChange } = formik
+  const { loading, startFakeSuccessProcess, showAlert } = showAlertContainer(formik.resetForm)
+  const { errors, touched, values, handleChange, handleBlur } = formik
   const { cvc, expiry, name, number, focus, plots } = values
 
   const handleInputFocus = (event) => {
     formik.setFieldValue('focus', event.target.name)
   }
   
-  const handleSubmit = () => start()
+  const handleSubmit = () => startFakeSuccessProcess()
 
   return (
     <>
@@ -59,9 +59,9 @@ const Checkout = () => {
       <Container>
         <LeftSection>
           <SmallHeader>
-            <FaChevronLeft />
-            <span>Alterar forma de pagamento</span>
-          </SmallHeader>
+          <FaChevronLeft />
+          <span>Alterar forma de pagamento</span>
+        </SmallHeader>
 
           <StepsForMobile>
             <p>
@@ -113,8 +113,10 @@ const Checkout = () => {
                 label='Número do cartão'
                 mask='9999 9999 9999 9999'
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}  
-                error={errors?.number}
+                error={(errors.number && touched.number) ? errors.number : null}
+                disabled={loading}
               />
             </Wrapper>
             <Wrapper>
@@ -123,8 +125,10 @@ const Checkout = () => {
                 name='name' 
                 label='Nome (igual ao cartão)' 
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}
-                error={errors?.name}
+                error={(errors?.name && touched?.name) ? errors?.name : null}
+                disabled={loading}
               />
             </Wrapper>
             <Wrapper cell={2}>
@@ -134,19 +138,22 @@ const Checkout = () => {
                 label='Validade'
                 mask='99/99' 
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}  
-                error={errors?.expiry}
+                error={(errors?.expiry && touched?.expiry) ? errors?.expiry : null}
+                disabled={loading}
               />
               <MaskedInput 
                 value={cvc}
                 name='cvc' 
                 label='CVV'
                 infoMessage='Código de segurança'
-                mask='999' 
-                hasInfo
+                mask='999'
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}
-                error={errors?.cvc}
+                error={(errors?.cvc && touched?.cvc) ? errors?.cvc : null}
+                disabled={loading}
               />
             </Wrapper>
             <Wrapper>
@@ -156,21 +163,28 @@ const Checkout = () => {
                 label='Número de parcelas'
                 options={PLOT_OPTIONS}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 onFocus={handleInputFocus}
-                error={errors?.plots}
+                error={(errors?.plots && touched?.plots) ? errors?.plots : null}
+                disabled={loading}
               />
             </Wrapper>
             <FooterForm>
               <Button 
-                onClick={handleSubmit}
+                type='button'
                 disabled={!formik.isValid}
                 loading={loading}
+                onClick={handleSubmit}
               >
                 Continuar
               </Button>
             </FooterForm>
           </Form>
         </RightSection>
+
+        <ExtraSection>
+          {Array.from(Array(7).keys()).map(fakeData => <div key={fakeData} />)}
+        </ExtraSection>
       </Container>
     </>
   )

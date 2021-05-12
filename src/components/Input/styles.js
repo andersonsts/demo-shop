@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+
 import { colors } from '@demo-shop/styles/globals';
 
 export const Container = styled.div`
@@ -17,6 +18,12 @@ export const Container = styled.div`
     padding: 16px 0px;
     font-weight: normal;
     letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+
+    &:disabled {
+      opacity: 0.75;
+    }
+
     word-spacing: 4px;
 
     ${props => props.isFilled && css`
