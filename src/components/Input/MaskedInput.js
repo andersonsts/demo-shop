@@ -1,7 +1,7 @@
 import InputMask from 'react-input-mask'
 
-import Tooltip from '../Tooltip'
-import ErrorContainer from '../ErrorContainer'
+import Tooltip from '@demo-shop/components/Tooltip'
+import ErrorContainer from '@demo-shop/components/ErrorContainer'
 
 import { Container } from './styles'
 

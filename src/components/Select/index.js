@@ -1,6 +1,6 @@
 import { FaChevronDown } from 'react-icons/fa'
 
-import ErrorContainer from '../ErrorContainer'
+import ErrorContainer from '@demo-shop/components/ErrorContainer'
 
 import { Container } from './styles'
 

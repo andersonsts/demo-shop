@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints } from './globals'
+import { breakpoints } from '@demo-shop/styles/globals'
 
 export const MainContainer = styled.div`
   width: 100%;
