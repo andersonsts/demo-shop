@@ -166,3 +166,79 @@ export const StepsForMobile = styled.div`
     display: flex;
   }
 `
+
+export const ExtraSection = styled.div`
+  max-width: 327px;
+  max-height: 285px;
+  width: 100%;
+  height: 100%;
+  margin-left: 15px;
+  padding: 52px 20px;
+  background-color: ${colors.white};
+
+  @media (max-width: ${breakpoints.xl}) {
+    display: none;
+  }
+
+  div:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(6)) {
+    width: 198px;
+    height: 12px;
+    border-radius: 5px;
+    background-color: ${colors.main};
+    margin-top: 25px;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 200px;
+      top: 50%;
+      transform: translate(50%, -50%);
+      width: 44px;
+      height: 12px;
+      border-radius: 5px;
+      background: ${colors.main};
+      margin-left: 24px;
+    }
+
+    & + div {
+      margin-top: 10px;
+    }
+  }
+
+  div:first-child {
+    width: 238px;
+    height: 18px;
+    border-radius: 5px;
+    background-color: ${colors.main};
+  }
+
+  div:nth-child(2) {
+    width: 287px;
+    height: 0px;
+    border: 1px solid ${colors.placeholder};
+    border-radius: 5px;
+    margin: 25px 0px;
+  }
+
+  div:nth-child(6)  {
+    width: 287px;
+    height: 0px;
+    border: 1px solid ${colors.placeholder};
+    border-radius: 5px;
+    margin-top: 25px;
+  }
+
+  div:last-child {
+    width: 198px;
+    height: 12px;
+    background: ${colors.gray} !important;
+    border-radius: 5px;
+    margin-top: 20px;
+
+    &::after {
+      background: ${colors.gray} !important;
+    }
+  }
+`

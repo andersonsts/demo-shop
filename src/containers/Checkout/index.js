@@ -24,6 +24,7 @@ import {
   Title,
   StepsNav,
   Form,
+  ExtraSection,
   FooterForm,
   StepsForMobile
 } from './styles'
@@ -59,9 +60,9 @@ const Checkout = () => {
       <Container>
         <LeftSection>
           <SmallHeader>
-            <FaChevronLeft />
-            <span>Alterar forma de pagamento</span>
-          </SmallHeader>
+          <FaChevronLeft />
+          <span>Alterar forma de pagamento</span>
+        </SmallHeader>
 
           <StepsForMobile>
             <p>
@@ -181,6 +182,10 @@ const Checkout = () => {
             </FooterForm>
           </Form>
         </RightSection>
+
+        <ExtraSection>
+          {Array.from(Array(7).keys()).map(fakeData => <div key={fakeData} />)}
+        </ExtraSection>
       </Container>
     </>
   )

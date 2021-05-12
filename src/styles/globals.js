@@ -7,12 +7,14 @@ export const colors = {
   black: '#3C3C3C',
   gray: '#C9C9C9',
   main: '#F7F7F7',
+  placeholder: '#707070',  
   green100: '#ccffcc',
   green200: '#5A7252'
 }
 
 export const breakpoints = {
-  lg: '1064px'
+  lg: '1064px',
+  xl: '1400px'
 }
 
 export const GlobalStyles = createGlobalStyle`
