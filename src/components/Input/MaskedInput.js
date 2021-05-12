@@ -24,6 +24,7 @@ const MaskedInput = ({
         name={name} 
         value={value} 
         maskChar={null}
+        data-testid='text-input'
         {...rest}
       />
       <label htmlFor={name}>

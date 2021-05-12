@@ -2,7 +2,7 @@ import { Content } from './styles'
 
 const ErrorContainer = ({ children }) => {
   return (
-    <Content>{children}</Content>
+    <Content data-testid='error-container'>{children}</Content>
   )
 }
 

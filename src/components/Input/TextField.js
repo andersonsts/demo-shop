@@ -6,15 +6,16 @@ const Input = ({ name, value, label, error, ...rest }) => {
   const isFilled = value !== '' 
 
   return (
-    <Container isFilled={isFilled} error={error}>
-      <input 
+    <Container isFilled={isFilled} error={error} data-testid='text-field-container'>
+      <input
+        data-testid='text-input'
         type="text" 
         name={name} 
         value={value} 
         {...rest}
       />
       
-      <label htmlFor={name}>
+      <label htmlFor={name} data-testid='label-input'>
         {label}
       </label>
       {!!error && (
