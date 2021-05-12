@@ -1,5 +1,5 @@
 
-import Loading from './loader';
+import Loading from '@demo-shop/components/Loader';
 
 import { ContainerButton } from './styles'
 

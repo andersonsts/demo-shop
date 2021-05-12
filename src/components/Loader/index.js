@@ -1,9 +1,12 @@
+
 import Loader from "react-loader-spinner";
 
 import { colors } from '@demo-shop/styles/globals';
 
+import { Wrapper } from './styles'
+
 const Loading = ({ ...props }) => (
-  <div data-testid='loader'>
+  <Wrapper data-testid='loader'>
     <Loader
       type="TailSpin"
       color={colors.white}
@@ -11,7 +14,7 @@ const Loading = ({ ...props }) => (
       width={28}
       {...props}
     />
-  </div>
+  </Wrapper>
 )
 
 export default Loading;
