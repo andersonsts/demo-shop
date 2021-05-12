@@ -16,6 +16,11 @@ export const Container = styled.div`
     -webkit-appearance: none;
     color: ${props => props.isFilled ? colors.black : colors.gray};
     outline: none;
+    transition: all 0.2s ease-in-out;
+
+    &:disabled {
+      opacity: 0.75;
+    }
 
     &:-ms-expand {
       display: none;

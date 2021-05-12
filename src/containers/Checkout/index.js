@@ -39,7 +39,7 @@ const Checkout = () => {
   const [checkedStep, setCheckedStep] = React.useState(INITIAL_STEP)
 
   const formik = useFormik(formikContent)
-  const { loading, start, showAlert } = showAlertContainer(formik.resetForm)
+  const { loading, startFakeSuccessProcess, showAlert } = showAlertContainer(formik.resetForm)
   const { errors, touched, values, handleChange, handleBlur } = formik
   const { cvc, expiry, name, number, focus, plots } = values
 
@@ -47,7 +47,7 @@ const Checkout = () => {
     formik.setFieldValue('focus', event.target.name)
   }
   
-  const handleSubmit = () => start()
+  const handleSubmit = () => startFakeSuccessProcess()
 
   return (
     <>
@@ -116,6 +116,7 @@ const Checkout = () => {
                 onBlur={handleBlur}
                 onFocus={handleInputFocus}  
                 error={(errors.number && touched.number) ? errors.number : null}
+                disabled={loading}
               />
             </Wrapper>
             <Wrapper>
@@ -127,6 +128,7 @@ const Checkout = () => {
                 onBlur={handleBlur}
                 onFocus={handleInputFocus}
                 error={(errors?.name && touched?.name) ? errors?.name : null}
+                disabled={loading}
               />
             </Wrapper>
             <Wrapper cell={2}>
@@ -139,6 +141,7 @@ const Checkout = () => {
                 onBlur={handleBlur}
                 onFocus={handleInputFocus}  
                 error={(errors?.expiry && touched?.expiry) ? errors?.expiry : null}
+                disabled={loading}
               />
               <MaskedInput 
                 value={cvc}
@@ -150,6 +153,7 @@ const Checkout = () => {
                 onBlur={handleBlur}
                 onFocus={handleInputFocus}
                 error={(errors?.cvc && touched?.cvc) ? errors?.cvc : null}
+                disabled={loading}
               />
             </Wrapper>
             <Wrapper>
@@ -162,13 +166,15 @@ const Checkout = () => {
                 onBlur={handleBlur}
                 onFocus={handleInputFocus}
                 error={(errors?.plots && touched?.plots) ? errors?.plots : null}
+                disabled={loading}
               />
             </Wrapper>
             <FooterForm>
               <Button 
-                onClick={handleSubmit}
+                type='button'
                 disabled={!formik.isValid}
                 loading={loading}
+                onClick={handleSubmit}
               >
                 Continuar
               </Button>

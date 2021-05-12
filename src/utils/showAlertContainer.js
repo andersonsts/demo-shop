@@ -4,7 +4,8 @@ export const showAlertContainer = (callback) => {
   const [loading, setLoading] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
-  const start = () => {
+  // fake success process
+  const startFakeSuccessProcess = () => {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
@@ -24,6 +25,6 @@ export const showAlertContainer = (callback) => {
   return {
     loading, 
     showAlert,
-    start
+    startFakeSuccessProcess
   }
 }
