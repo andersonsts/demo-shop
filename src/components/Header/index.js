@@ -7,7 +7,7 @@ const Header = () => {
         <img src="/images/logo.svg" alt="Demo Shop Logo"/>
       </div>
 
-      <div>
+      <div data-testid='placeholder-divs'>
         {[...Array(5).keys()].map(fakeItem => (
           <span key={fakeItem} />
         ))}

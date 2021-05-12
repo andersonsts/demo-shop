@@ -10,4 +10,10 @@ describe('Header component', () => {
 
     expect(screen.getByTestId('image-container')).toBeInTheDocument();
   })
+
+  it('should render placeholders div inside header component', () => {
+    render(<Header />)
+
+    expect(screen.getByTestId('placeholder-divs')).toBeInTheDocument();
+  })
 })
