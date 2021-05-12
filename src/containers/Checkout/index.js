@@ -47,7 +47,10 @@ const Checkout = () => {
     formik.setFieldValue('focus', event.target.name)
   }
   
-  const handleSubmit = () => startFakeSuccessProcess()
+  const handleSubmit = () => {
+    // call the endpoint /payment
+    startFakeSuccessProcess()
+  }
 
   return (
     <>

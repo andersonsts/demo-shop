@@ -1,3 +1,3 @@
 export const PAYMENT_ROUTES = {
-  payment: '/payment'
+  payment: '/pagar'
 }
