@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { creditCard } from './credit-card'
 
 export const colors = {
   white: '#ffffff',
@@ -21,10 +22,10 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box
   }
 
-  @media (max-width: 1080px) {
-  html {
-      font-size: 93.75%; // 15px
-    }
+  @media (max-width: ${breakpoints.lg}) {
+    html {
+        font-size: 93.75%; // 15px
+      }
   }
 
   @media (max-width: 720px) {
@@ -41,25 +42,7 @@ export const GlobalStyles = createGlobalStyle`
     font: 500 1rem Roboto, sans-serif;
   }
 
-  // credit card...
-  .rccs {
-    width: 324px !important;
-    height: 200px !important;
-    margin-top: 31px !important;
-  }
-
-  @media (max-width: ${breakpoints.lg}) {
-    .rccs {
-      position: absolute !important;
-      left: 50% !important;
-      transform: translate(-50%, 50%) !important;
-    }
-  }
-
-  .rccs__card {
-    width: 100% !important;
-    height: 100% !important;
-  }
+  ${creditCard(breakpoints)}
 `
 
 

@@ -10,6 +10,7 @@ export const Container = styled.div`
 
   @media (max-width: ${breakpoints.lg}) {
     flex-direction: column;
+    max-width: 100%;
   }
 `
 
@@ -47,7 +48,7 @@ export const RightSection = styled.div`
   }
 `
 
-export const SmallHeader = styled.button`
+export const SmallHeader = styled.a`
   background-color: transparent;
   border: none;
   display: flex;
@@ -60,6 +61,8 @@ export const SmallHeader = styled.button`
 
   @media (max-width: ${breakpoints.lg}) {
     max-width: 2rem;
+    position: absolute;
+    left: 16px;
     
     span {
       display: none;
@@ -77,7 +80,7 @@ export const SmallHeader = styled.button`
   }
 
   span {
-    margin-left: 8px;
+    margin-left: 12px;
   }
 
   > svg {
@@ -97,7 +100,7 @@ export const Title = styled.div`
 
   @media (max-width: ${breakpoints.lg}) {
     justify-content: center;
-    margin-top: 32px;
+    margin-top: 64px;
     padding-bottom: 80px;
   }
 
@@ -120,10 +123,12 @@ export const StepsNav = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
+  margin-top: 5rem;
 
   @media (max-width: ${breakpoints.lg}) {
-    margin-top: 4rem;
+    max-width: 720px;
+    width: 100%;
+    margin: 4rem auto auto auto;
   }
 `
 

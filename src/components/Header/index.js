@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <div>
-        <img src="/images/logo.svg" alt="Demo Shop Logo"/>
+        <img src="/images/logo.svg" alt="Demo Shop Logo" />
       </div>
 
       <div>
