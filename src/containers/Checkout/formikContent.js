@@ -1,6 +1,8 @@
 import valid from 'card-validator'
 import * as yup from 'yup'
 
+import { CHECKOUT_ERROR_MESSAGES } from '@demo-shop/contants/errorMessages/checkoutForm'
+
 export const formikContent = {
   initialValues: {
     cvc: '',
@@ -12,34 +14,34 @@ export const formikContent = {
   },
   validationSchema: yup.object().shape({
     cvc: yup.string()
-      .required('Informe o código de segurança')
+      .required(CHECKOUT_ERROR_MESSAGES.cvc.required)
       .test(
         'test-cvc',
-        'Código inválido',
+        CHECKOUT_ERROR_MESSAGES.cvc.invalid,
         value => valid.cvv(value).isValid
       ),
     expiry: yup.string()
-      .required('Informe a data de expiração')
+      .required(CHECKOUT_ERROR_MESSAGES.expiry.required)
       .test(
         'test-expiry',
-        'Data inválida',
+        CHECKOUT_ERROR_MESSAGES.expiry.invalid,
         value => valid.expirationDate(value).isValid
       ),
     name: yup.string()
       .test(
         'test-fullname',
-        'Informe seu nome completo',
+        CHECKOUT_ERROR_MESSAGES.name.required,
         value => value && value.match(/(\w.+\s).+/i)
       ),
     number: yup.string()
-      .required('Informe um número de cartão')
+      .required(CHECKOUT_ERROR_MESSAGES.number.required)
       .test(
         'test-number',
-        'Número de cartão inválido',
+        CHECKOUT_ERROR_MESSAGES.number.invalid,
         value => valid.number(value).isValid
       ),
     plots: yup.string()
-        .required('Insira o número de parcelas')
+        .required(CHECKOUT_ERROR_MESSAGES.plots.required)
   }),
   onSubmit: (values) => {
   }
